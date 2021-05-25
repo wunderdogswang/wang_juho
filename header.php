@@ -1,12 +1,12 @@
 <?php
 	// check before website
-	if( empty(wp_get_referer()) ){
+	if( empty($_SERVER['HTTP_REFERER']) ){
 		// remove session value
 		unset($_SESSION['age_gate_confirm']);
 	} else {
 		// check refer url is from site or other site
 		$site_url = site_url();
-		$referer_url = wp_get_referer();
+		$referer_url = $_SERVER['HTTP_REFERER'];
 		$cut_referer_url = substr($referer_url, 0, strlen($site_url));
 		
 		if( $cut_referer_url !== $site_url ){
