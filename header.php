@@ -44,12 +44,15 @@ $container = get_theme_mod('juho_container_type');
 				</div>
 				<div class="age-gate-popup-content">
 					<p>Are you 21 or older?</p>
+					<div class="age-gate-popup-checkbox">
+						<label>Remember <input type="checkbox"><span></span></label>
+					</div>
 					<div class="age-gate-popup-button-row">
 						<div class="age-gate-popup-button-left">
 							<button id="age-gate-popup-button-yes">Yes</button>
 						</div>
 						<div class="age-gate-popup-button-right">
-							<a href="#" id="age-gate-popup-button-no">No</a>
+							<button id="age-gate-popup-button-no">No</button>
 						</div>
 					</div>
 				</div>

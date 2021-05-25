@@ -59,7 +59,7 @@
 .age-gate-popup-button-row{
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 .age-gate-popup-button-right{
@@ -104,6 +104,53 @@
     }
 }
 
+.age-gate-popup-checkbox{
+    margin-top: 25px;
+
+    label{
+        position: relative;
+        font-size: 22px;
+        margin: 0;
+        padding-left: 35px;
+        user-select: none;
+    }
+
+    span {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+
+        &::after{
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 3px;
+            width: 8px;
+            height: 16px;
+            border: solid $primary;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.2s ease-out;
+        }
+    }
+    
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ span::after {
+            opacity: 1;
+        }
+    }
+}
+
 @media(max-width: 1000px){
 
     .age-gate-popup-logo{
@@ -114,7 +161,7 @@
 
     .age-gate-popup-inner{
         overflow: hidden;
-        min-height: 370px;
+        min-height: 410px;
     
         &::before{
             top: -80px;

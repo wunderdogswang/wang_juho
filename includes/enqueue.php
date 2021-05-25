@@ -72,6 +72,14 @@ if (! function_exists('juho_scripts')) {
         );
 
         wp_enqueue_script(
+            'age-gate',
+            get_stylesheet_directory_uri() . '/js/age-gate.js',
+            '',
+            '1.0.0',
+            true
+        );
+
+        wp_enqueue_script(
             'jquery-cookie',
             get_stylesheet_directory_uri() . '/js/jquery.cookie.js',
             '',
