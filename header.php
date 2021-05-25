@@ -76,7 +76,7 @@ $container = get_theme_mod('juho_container_type');
 					<form method="post" action="">
 						<p>Are you 21 or older?</p>
 						<div class="age-gate-popup-checkbox">
-							<label>Remember <input type="checkbox" name="age_gate_remember" value="1"><span></span></label>
+							<label>Remember me<input type="checkbox" name="age_gate_remember" value="1"><span></span></label>
 						</div>
 						<div class="age-gate-popup-button-row">
 							<div class="age-gate-popup-button-left">
