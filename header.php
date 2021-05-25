@@ -43,7 +43,7 @@ defined('ABSPATH') || exit;
 $container = get_theme_mod('juho_container_type');
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> <?php echo !(isset($_SESSION['age_gate_confirm']) || isset($_SESSION['age_gate_confirm_remembered'])) ? 'style="overflow: hidden;"' :''; ?>>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -63,7 +63,7 @@ $container = get_theme_mod('juho_container_type');
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php juho_body_attributes(); ?>>
+<body <?php body_class(); ?> <?php juho_body_attributes(); ?> <?php echo !(isset($_SESSION['age_gate_confirm']) || isset($_SESSION['age_gate_confirm_remembered'])) ? 'style="overflow: hidden;"' :''; ?>>
 <?php
 	if( !(isset($_SESSION['age_gate_confirm']) || isset($_SESSION['age_gate_confirm_remembered'])) ){
 ?>
