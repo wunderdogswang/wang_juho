@@ -1,13 +1,43 @@
 <?php
-/**
- * The header for our theme
- *
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package Juho
- */
+	// check before website
+	if( empty(wp_get_referer()) ){
+		// remove session value
+		unset($_SESSION['age_gate_confirm']);
+	} else {
+		// check refer url is from site or other site
+		$site_url = site_url();
+		$referer_url = wp_get_referer();
+		$cut_referer_url = substr($referer_url, 0, strlen($site_url));
+		
+		if( $cut_referer_url !== $site_url ){
+			// if the site was visited from other external site
+			// remove session value
+			unset($_SESSION['age_gate_confirm']);
+		} else {
+			if( isset($_POST['action']) && $_POST['action'] === 'age_gate_submit' ){
+				if( isset($_POST['age_gate_confirm']) ){
+					// click no button
+					if( empty($_POST['age_gate_confirm']) ){
+						// remove session value
+						unset($_SESSION['age_gate_confirm']);
 
-// Exit if accessed directly.
+						//redirect
+						wp_redirect( 'https://www.google.com/' );
+						exit;
+					} else {
+						// click yes button
+						if( isset($_POST['age_gate_remember']) ){
+							// checked remember
+							$_SESSION['age_gate_confirm_remembered'] = true;
+						} else {
+							$_SESSION['age_gate_confirm'] = true;
+						}
+					}
+				}
+			}
+		}
+	}
+
 defined('ABSPATH') || exit;
 
 $container = get_theme_mod('juho_container_type');
@@ -35,7 +65,7 @@ $container = get_theme_mod('juho_container_type');
 
 <body <?php body_class(); ?> <?php juho_body_attributes(); ?>>
 <?php
-	if( empty($_SERVER['HTTP_REFERER']) ){
+	if( !(isset($_SESSION['age_gate_confirm']) || isset($_SESSION['age_gate_confirm_remembered'])) ){
 ?>
 		<div class="age-gate-popup">
 			<div class="age-gate-popup-inner">
@@ -43,18 +73,21 @@ $container = get_theme_mod('juho_container_type');
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/logo-white.svg" alt="logo">
 				</div>
 				<div class="age-gate-popup-content">
-					<p>Are you 21 or older?</p>
-					<div class="age-gate-popup-checkbox">
-						<label>Remember <input type="checkbox"><span></span></label>
-					</div>
-					<div class="age-gate-popup-button-row">
-						<div class="age-gate-popup-button-left">
-							<button id="age-gate-popup-button-yes">Yes</button>
+					<form method="post" action="">
+						<p>Are you 21 or older?</p>
+						<div class="age-gate-popup-checkbox">
+							<label>Remember <input type="checkbox" name="age_gate_remember" value="1"><span></span></label>
 						</div>
-						<div class="age-gate-popup-button-right">
-							<button id="age-gate-popup-button-no">No</button>
+						<div class="age-gate-popup-button-row">
+							<div class="age-gate-popup-button-left">
+								<button id="age-gate-popup-button-yes" type="submit" value="1" name="age_gate_confirm">Yes</button>
+							</div>
+							<div class="age-gate-popup-button-right">
+								<button id="age-gate-popup-button-no" type="submit" name="age_gate_confirm">No</button>
+							</div>
 						</div>
-					</div>
+						<input type="hidden" name="action" value="age_gate_submit">
+					</form>
 				</div>
 			</div>
 		</div>

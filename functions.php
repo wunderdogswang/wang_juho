@@ -49,3 +49,12 @@ function custom_excerpt_length($length)
 }
 add_filter('excerpt_length', 'custom_excerpt_length', 999);
 add_image_size('juho-moments', 1980, 600, true);
+
+
+function age_gate_session_init() {
+    if (!session_id()) {
+        session_start();
+    }
+}
+
+add_action( 'init', 'age_gate_session_init' );

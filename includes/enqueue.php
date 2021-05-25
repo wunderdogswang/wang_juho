@@ -71,22 +71,6 @@ if (! function_exists('juho_scripts')) {
             true
         );
 
-        wp_enqueue_script(
-            'age-gate',
-            get_stylesheet_directory_uri() . '/js/age-gate.js',
-            '',
-            '1.0.0',
-            true
-        );
-
-        wp_enqueue_script(
-            'jquery-cookie',
-            get_stylesheet_directory_uri() . '/js/jquery.cookie.js',
-            '',
-            '1.4.1',
-            false
-        );
-
         /* Load time of day script on home page only */
         if (is_page('home')) {
             wp_enqueue_script(
