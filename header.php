@@ -34,19 +34,30 @@ $container = get_theme_mod('juho_container_type');
 </head>
 
 <body <?php body_class(); ?> <?php juho_body_attributes(); ?>>
-<div class="age-gate-popup">
-	<div class="age-gate-popup-inner">
-		<p>Are you 21 or older?</p>
-		<div class="age-gate-popup-button">
-			<div class="age-gate-popup-button-yes">
-				<button>Yes</button>
-			</div>
-			<div class="age-gate-popup-button-no">
-				<a href="#">No</a>
+<?php
+	if( empty($_SERVER['HTTP_REFERER']) ){
+?>
+		<div class="age-gate-popup">
+			<div class="age-gate-popup-inner">
+				<div class="age-gate-popup-logo">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/logo-white.svg" alt="logo">
+				</div>
+				<div class="age-gate-popup-content">
+					<p>Are you 21 or older?</p>
+					<div class="age-gate-popup-button-row">
+						<div class="age-gate-popup-button-left">
+							<button id="age-gate-popup-button-yes">Yes</button>
+						</div>
+						<div class="age-gate-popup-button-right">
+							<a href="#" id="age-gate-popup-button-no">No</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
+<?php
+	}
+?>
 <?php do_action('wp_body_open'); ?>
 <div class="site" id="page">
 	<div id="wrapper-navbar">

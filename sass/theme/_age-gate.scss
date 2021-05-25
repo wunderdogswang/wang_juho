@@ -1,0 +1,140 @@
+.age-gate-popup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $white;
+    z-index: 99999999;
+    overflow-y: auto;
+}
+
+.age-gate-popup-inner{
+    position: relative;
+    min-height: 600px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 183px;
+        background-image: url('../assets/age-gate-top.svg');
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 183px;
+        background-image: url('../assets/age-gate-bottom.svg');
+    }
+}
+
+.age-gate-popup-logo{
+    position: absolute;
+    left: 120px;
+    top: 45px;
+}
+
+.age-gate-popup-content{
+    text-align: center;
+
+    p{
+        font-family: 'Kanit';
+        margin: 0;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 1;
+    }
+}
+
+.age-gate-popup-button-row{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.age-gate-popup-button-right{
+    margin-left: 36px;
+}
+
+#age-gate-popup-button-yes{
+    border: 0;
+    padding: 15px 0 17px;
+    box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.4);
+    border-radius: 32px;
+    font-size: 16px;
+    line-height: 1;
+    background-color: $primary;
+    font-weight: 700;
+    color: $white;
+    width: 100px;
+    display: inline-block;
+    transition: background-color 0.2s ease-out;
+
+    &:hover{
+        background-color: $apple;
+    }
+}
+
+#age-gate-popup-button-no{
+    border: 0;
+    padding: 15px 0 17px;
+    box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.4);
+    border-radius: 32px;
+    font-size: 16px;
+    line-height: 1;
+    background-color: #9F9F9F;
+    font-weight: 700;
+    color: $white;
+    width: 100px;
+    display: inline-block;
+    transition: background-color 0.2s ease-out;
+
+    &:hover{
+        background-color: $apple;
+    }
+}
+
+@media(max-width: 1000px){
+
+    .age-gate-popup-logo{
+        width: 100px;
+        top: 15px;
+        left: 30px;
+    }
+
+    .age-gate-popup-inner{
+        overflow: hidden;
+        min-height: 370px;
+    
+        &::before{
+            top: -80px;
+        }
+    
+        &::after{
+            bottom: -80px;
+        }
+    }
+
+    .age-gate-popup-content{
+        padding: 0 30px;
+        
+        p{
+            font-size: 45px;
+            line-height: 1.2;
+        }
+    }
+
+    .age-gate-popup-button-row{
+        margin-top: 25px;
+    }
+}
