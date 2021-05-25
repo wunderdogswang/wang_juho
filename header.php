@@ -34,6 +34,19 @@ $container = get_theme_mod('juho_container_type');
 </head>
 
 <body <?php body_class(); ?> <?php juho_body_attributes(); ?>>
+<div class="age-gate-popup">
+	<div class="age-gate-popup-inner">
+		<p>Are you 21 or older?</p>
+		<div class="age-gate-popup-button">
+			<div class="age-gate-popup-button-yes">
+				<button>Yes</button>
+			</div>
+			<div class="age-gate-popup-button-no">
+				<a href="#">No</a>
+			</div>
+		</div>
+	</div>
+</div>
 <?php do_action('wp_body_open'); ?>
 <div class="site" id="page">
 	<div id="wrapper-navbar">
