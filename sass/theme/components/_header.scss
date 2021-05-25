@@ -1,0 +1,214 @@
+.header {
+	&__social {
+		margin-left: auto;
+		display: flex;
+
+		@media only screen and (max-width: 767px) {
+			display: none;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			display: none;
+		}
+
+		img {
+			width: 33px;
+			height: 33px;
+			object-fit: contain;
+			margin-left: 20px;
+		}
+	}
+
+	&__sticky {
+		background-color: $primary !important;
+		transition: all .5s ease-in !important;
+	}
+}
+
+.container {
+	background-color: transparent;
+	z-index: 999;
+	flex-wrap: wrap !important;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.dropdown-menu {
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: -10px;
+		left: 20px;
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		border-bottom: 8px solid $primary;
+
+		@media only screen and (max-width: 767px) {
+			top: 32px;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			top: 32px;
+		}
+	}
+}
+
+#wrapper-navbar {
+	.navbar-collapse {
+		@media only screen and (max-width: 767px) {
+			width: 80%;
+		}
+
+		.navbar-nav {
+			@media only screen and (max-width: 767px) {
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	.navbar-dark .navbar-nav .active {
+		a {
+			display: inline-block;
+			position: relative;
+
+			&::after {
+				position: absolute;
+				content: '';
+				border-bottom: 4px solid $apple;
+				width: 80%;
+				transform: translateX(-50%);
+				bottom: 0;
+				left: 50%;
+
+				@media only screen and (max-width: 767px) {
+					width: 100%;
+				}
+
+				@media only screen and (min-width: 768px) and (max-width: 1024px) {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.navbar-dark .navbar-nav .nav-link {
+		color: $white !important;
+		font-weight: 500 !important;
+		margin-right: 70px;
+
+		@media only screen and (max-width: 767px) {
+			color: $white !important;
+			font-family: 'Kanit', sans-serif;
+			font-size: clamp(30px, 3.5vw, 65px);
+			font-weight: 800 !important;
+			animation: flipInX;
+			animation-duration: 1s;
+			margin-right: 0;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			color: $white !important;
+			font-family: 'Kanit', sans-serif;
+			font-size: clamp(30px, 3.5vw, 65px);
+			font-weight: 800 !important;
+			margin-right: 0;
+		}
+
+
+		&:hover {
+			color: $apple !important;
+		}
+	}
+
+	.dropdown-item,
+	.dropdown-item.active,
+	.dropdown-item:active {
+		color: $primary !important;
+		font-weight: 500 !important;
+		font-size: 14px !important;
+
+		&:hover {
+			color: $apple !important;
+			background-color: transparent !important;
+		}
+	}
+
+	.img-fluid {
+		width: 142px;
+		height: 46px;
+		object-fit: contain;
+
+		@media only screen and (max-width: 767px) {
+			width: 100px;
+			height: auto;
+		}
+	}
+
+	.navbar {
+		padding: 0;
+
+		.container {
+			justify-content: inherit;
+		}
+	}
+
+	.navbar-dark .navbar-nav .nav-link {
+		font-weight: 500;
+	}
+
+	.navbar-dark .navbar-toggler-icon {
+		background-image: url("../assets/menu-icon.svg");
+	}
+
+	.navbar-dark .navbar-brand {
+		@media only screen and (max-width: 767px) {
+			z-index: 1;
+		}
+	}
+
+	.navbar-dark .navbar-toggler {
+		border-color: transparent;
+
+		@media only screen and (max-width: 767px) {
+			z-index: 1;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			z-index: 1;
+		}
+	}
+
+	.navbar-collapse {
+		flex-grow: inherit;
+		margin-left: auto;
+		margin-top: 7px;
+
+		@media only screen and (max-width: 767px) {
+			position: absolute;
+			background-color: $primary;
+			right: 0;
+			top: 0;
+			width: 100vw;
+			height: 110vh;
+			padding: 20px;
+			margin-top: -25px;
+			text-align: center;
+			padding-top: 30vh;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			position: absolute;
+			background-color: $primary;
+			right: 0;
+			top: 0;
+			width: 100vw;
+			height: 105vh;
+			padding: 20px;
+			margin-top: -30px;
+			text-align: center;
+			padding-top: 30vh;
+		}
+	}
+}

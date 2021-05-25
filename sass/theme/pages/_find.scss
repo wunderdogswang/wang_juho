@@ -1,0 +1,19 @@
+.find {
+
+	&__intro {
+		padding: 0 $padding;
+
+		h1 {
+			text-align: center;
+			margin-bottom: 80px;
+
+			@media only screen and (max-width: 767px) {
+				margin-bottom: 50px;
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				margin-bottom: 50px;
+			}
+		}
+	}
+}

@@ -1,0 +1,186 @@
+.flavors {
+
+	&__top {
+		padding: 0 $padding;
+		text-align: center;
+		max-width: 70%;
+		margin: 0 auto;
+
+		@media only screen and (max-width: 767px) {
+			max-width: 100%;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			max-width: 100%;
+		}
+
+		h1 {
+			margin-bottom: 50px;
+
+			@media only screen and (max-width: 767px) {
+				margin-bottom: 30px;
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__composition {
+		padding: 50px $padding;
+		max-width: 70%;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		gap: 0px 50px;
+		grid-template-areas:
+			". . . .";
+
+		@media only screen and (max-width: 767px) {
+			padding: 20px $padding;
+			max-width: 100%;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px 20px;
+			grid-template-areas:
+				". .";
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			padding: 30px $padding;
+			max-width: 100%;
+		}
+
+		img {
+			width: 190px;
+			height: 190px;
+			object-fit: contain;
+
+			@media only screen and (max-width: 767px) {
+				width: 160px;
+				height: 160px;
+			}
+		}
+	}
+
+	&__card {
+		padding-left: $padding;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 100px;
+
+		@media only screen and (max-width: 767px) {
+			flex-direction: column-reverse;
+			padding: 0;
+		}
+
+		&-details {
+			width: 30%;
+
+			@media only screen and (max-width: 767px) {
+				padding: 0 $padding;
+				width: 100%;
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				width: 50%;
+			}
+
+			h4 {
+				text-transform: uppercase;
+				margin-bottom: 20px;
+			}
+
+			h6 {
+				font-family: 'Rubik', sans-serif;
+				font-weight: bold;
+				text-transform: uppercase;
+				line-height: normal;
+				letter-spacing: normal;
+			}
+
+			&-ingredients {
+				margin: 20px 0;
+				padding: 20px 0;
+				border-top: 1px solid $primary;
+				border-bottom: 1px solid $primary;
+
+				b,
+				strong {
+					text-transform: uppercase;
+				}
+			}
+
+			&-nutrition {
+				margin-bottom: 50px;
+
+				b,
+				strong {
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		&-photo {
+			width: 70%;
+
+			@media only screen and (max-width: 767px) {
+				padding-left: $padding;
+				width: 100%;
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				width: 50%;
+			}
+
+			&-desktop {
+				margin-left: 50px;
+
+				@media only screen and (max-width: 767px) {
+					display: none;
+				}
+
+				@media only screen and (min-width: 768px) and (max-width: 1024px) {
+					display: none;
+				}
+			}
+
+			&-mobile {
+				display: none;
+
+				@media only screen and (max-width: 767px) {
+					display: block;
+					margin-left: 0;
+
+					/* disable image animation on mobile */
+					-o-transition-property: none !important;
+					-moz-transition-property: none !important;
+					-ms-transition-property: none !important;
+					-webkit-transition-property: none !important;
+					transition-property: none !important;
+
+					/*CSS transforms*/
+					-o-transform: none !important;
+					-moz-transform: none !important;
+					-ms-transform: none !important;
+					-webkit-transform: none !important;
+					transform: none !important;
+
+					/*CSS animations*/
+					-webkit-animation: none !important;
+					-moz-animation: none !important;
+					-o-animation: none !important;
+					-ms-animation: none !important;
+					animation: none !important;
+				}
+
+				@media only screen and (min-width: 768px) and (max-width: 1024px) {
+					display: block;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}

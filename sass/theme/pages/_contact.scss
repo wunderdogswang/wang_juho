@@ -1,0 +1,159 @@
+.contact {
+	&__content {
+		padding: 0 $padding;
+		text-align: center;
+		max-width: 70%;
+		margin: 0 auto;
+
+		@media only screen and (max-width: 767px) {
+			max-width: 100%;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			max-width: 100%;
+		}
+
+		h1 {
+			margin-bottom: 50px;
+
+			@media only screen and (max-width: 767px) {
+				margin-bottom: 30px;
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				margin-bottom: 30px;
+			}
+		}
+
+		p {
+			margin-bottom: 50px;
+
+			@media only screen and (max-width: 767px) {
+				margin-bottom: 30px;
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	&__form {
+		background-color: $primary;
+		margin-bottom: -3vw;
+
+		@media only screen and (max-width: 767px) {
+			margin-bottom: -5vh;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			margin-bottom: -5vh;
+		}
+
+		form {
+			padding: 100px $padding 50px;
+
+			@media only screen and (max-width: 767px) {
+				padding: 50px $padding 50px;
+			}
+
+			::placeholder {
+				color: #9f9f9f !important;
+				font-family: 'Rubik', sans-serif !important;
+				font-size: clamp(16px, 1.15vw, 24px) !important;
+			}
+		}
+
+		input[type=text],
+		input[type=tel],
+		input[type=email] {
+			margin-bottom: 50px;
+
+			@media only screen and (max-width: 767px) {
+				margin-bottom: 25px;
+			}
+		}
+
+		textarea,
+		input[type=text],
+		input[type=tel],
+		input[type=email] {
+			color: $primary !important;
+			font-family: 'Rubik', sans-serif !important;
+			font-size: clamp(16px, 1.15vw, 24px) !important !important;
+			padding: 20px !important;
+		}
+
+		&-flex {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr;
+			gap: 20px 50px;
+			grid-template-areas:
+				". .";
+
+			@media only screen and (max-width: 767px) {
+				grid-template-columns: 1fr;
+				gap: 0;
+				grid-template-areas:
+					".";
+			}
+
+			&:nth-child(3) {
+				@media only screen and (max-width: 767px) {
+					display: flex;
+					flex-direction: column-reverse;
+				}
+			}
+		}
+
+		&-btn {
+			max-width: 12%;
+			margin: 50px auto 0;
+
+			@media only screen and (max-width: 767px) {
+				max-width: 50%;
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				max-width: 23%;
+			}
+
+			input[type=submit] {
+				color: #fff !important;
+				font-size: clamp(16px, 1.15vw, 24px) !important;
+				font-weight: bold;
+				background-color: $apple !important;
+				border: 1px $apple solid !important;
+				height: 50px;
+				border-radius: 32px !important;
+
+				&:hover {
+					color: $apple !important;
+					border: 1px solid $white !important;
+					background-color: $white !important;
+				}
+			}
+		}
+	}
+}
+
+//error message that pops up at the bottom
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.sent .wpcf7-response-output {
+	border-color: $apple !important;
+	color: $white !important;
+	text-align: center;
+	border-radius: 20px !important;
+}
+
+//error messages on specific fields
+.wpcf7 .wpcf7-not-valid-tip {
+	color: $apple !important;
+	margin: -40px 20px 20px;
+
+	@media only screen and (max-width: 767px) {
+		margin: -15px 20px 20px !important;
+	}
+}

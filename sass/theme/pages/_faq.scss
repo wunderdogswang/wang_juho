@@ -1,0 +1,96 @@
+.faq {
+	&__top {
+		padding: 0 $padding;
+
+		h1 {
+			text-align: center;
+			margin-bottom: 80px;
+
+			@media only screen and (max-width: 767px) {
+				margin-bottom: 50px;
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				margin-bottom: 50px;
+			}
+		}
+	}
+
+	/* Styles for Accordion */
+	&__card {
+		margin: 0 $padding 40px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+		z-index: 1;
+		background-color: $white;
+
+		&:last-of-type {
+			margin-bottom: 100px;
+		}
+
+		&-wrapper {
+			background-image: url("../assets/faq-bg.svg");
+			background-repeat: no-repeat;
+			background-position: center calc(50% - 50px);
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: -1;
+		}
+
+		&-question {
+			position: relative;
+			display: block;
+			margin-bottom: 15px;
+
+			h6 {
+				max-width: 90%;
+				text-transform: uppercase;
+				cursor: pointer;
+			}
+
+			span {
+				display: block;
+				padding: 15px 25px 0;
+			}
+
+			a i {
+				font-size: 22px;
+				margin-right: 5px;
+			}
+
+			i {
+				position: absolute;
+				background-image: url("../assets/faq-open.png");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				width: 30px;
+				height: 30px;
+				-webkit-transition: all 0.3s ease;
+				-moz-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+				margin: 12px 20px;
+				right: 0;
+				transition: background-image 0.3s ease-in-out;
+			}
+
+			&.active i {
+				background-image: url("../assets/faq-close.svg");
+				background-repeat: no-repeat;
+			}
+		}
+
+		&-answer {
+			padding: 7px 25px 10px 25px;
+			display: none;
+			margin: -7px 0 6px;
+
+			div {
+				max-width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,164 @@
+body {
+	font-family: 'Rubik', sans-serif;
+	font-size: clamp(16px, 1.15vw, 24px);
+	color: $primary;
+	overflow-x: hidden;
+
+	a {
+		text-decoration: none !important;
+
+		&:hover {
+			color: $apple;
+		}
+	}
+}
+
+/* WebKit/Blink Browsers */
+::selection {
+	background: $apple;
+	color: #fff;
+}
+
+/* Gecko Browsers */
+::-moz-selection {
+	background: $apple;
+	color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Kanit', sans-serif;
+}
+
+h1 {
+	font-size: clamp(45px, 4vw, 75px);
+	font-weight: 800;
+	line-height: 1.06;
+
+	@media only screen and (min-width: 768px) and (max-width: 1024px) {
+		font-size: 50px;
+	}
+}
+
+h2 {
+	font-size: clamp(35px, 3.5vw, 65px);
+	font-weight: 800;
+
+	@media only screen and (min-width: 768px) and (max-width: 1024px) {
+		font-size: 40px;
+	}
+}
+
+h3 {
+	font-weight: 800;
+}
+
+h4 {
+	font-size: clamp(28px, 2.2vw, 45px);
+	font-weight: 800;
+	letter-spacing: 5.4px;
+}
+
+h5 {
+	font-size: clamp(22px, 1.8vw, 35px);
+	font-weight: 800;
+	letter-spacing: 5.4px;
+}
+
+h6 {
+	font-size: clamp(18px, 1.4vw, 30px);
+	font-weight: 800;
+	letter-spacing: 3.6px;
+}
+
+p {
+	line-height: 1.67;
+}
+
+.Lemon {
+	color: $lemon;
+}
+
+.Peach {
+	color: $peach;
+}
+
+.Apple {
+	color: $apple;
+}
+
+.juho-read-more-link {
+	text-align: center;
+	color: $primary;
+	padding: 5px 15px;
+	border-radius: 5px;
+	border: 1px $primary solid;
+	background: linear-gradient(to right, $primary 50%, transparent 50%);
+	background-size: 200% 100%;
+	background-position: right bottom;
+	transition: all .9s ease-out;
+	text-decoration: none;
+	margin-left: auto;
+	float: right;
+	margin: 10px 0 30px;
+	font-size: 13px;
+
+	&:hover {
+		color: #fff;
+		background-color: $primary;
+		background-position: left bottom;
+	}
+}
+
+.container {
+	max-width: 100%;
+	padding: 15px $padding !important;
+}
+
+.btn-primary {
+	color: $white;
+	font-weight: bold;
+	border: 1px solid $apple;
+	border-radius: 32px;
+	box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.4);
+	background-color: $apple;
+	padding: 15px 30px;
+	opacity: 1;
+	transition: 0.3s;
+
+	@media only screen and (max-width: 767px) {
+		padding: 10px 25px;
+	}
+
+	&:hover {
+		color: $apple;
+		border: 1px solid $white;
+		background-color: $white;
+	}
+}
+
+.btn-secondary {
+	color: $white;
+	font-weight: bold;
+	border: 1px solid $primary;
+	border-radius: 32px;
+	box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.4);
+	background-color: $primary;
+	padding: 15px 30px;
+	opacity: 1;
+	transition: 0.3s;
+
+	@media only screen and (max-width: 767px) {
+		padding: 10px 25px;
+	}
+
+	&:hover {
+		color: $white;
+		border: 1px solid $apple;
+		background-color: $apple;
+	}
+}

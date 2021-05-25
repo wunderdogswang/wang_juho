@@ -1,0 +1,42 @@
+.four04 {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	padding: 0 $padding;
+	background-image: url("../assets/404.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: -3vw;
+
+	@media only screen and (max-width: 767px) {
+		margin-bottom: -5vh;
+	}
+
+	@media only screen and (min-width: 768px) and (max-width: 1024px) {
+		min-height: 70vh;
+		margin-bottom: -5vh;
+	}
+
+	&__content {
+		max-width: 50%;
+		color: $white;
+
+		@media only screen and (max-width: 767px) {
+			max-width: 100%;
+		}
+
+		@media only screen and (min-width: 768px) and (max-width: 1024px) {
+			max-width: 80%;
+		}
+
+		p {
+			margin: 30px 0 50px;
+
+			a {
+				color: $white;
+				font-weight: bold;
+			}
+		}
+	}
+}
